@@ -8,49 +8,34 @@ import matplotlib.pyplot as plt
 logging.basicConfig(level=logging.INFO)
 
 
-# Data stream generator with random walk, noise, anomalies, and seasonality
-def data_stream_simulation(num_points=1000, noise_level=0.35, anomaly_frequency=0.05, seasonality_period=50, seed=None):
-    """Generates a data stream with random walk patterns, random noise, occasional anomalies, and seasonality."""
+# Data stream generator with random walk, noise, and anomalies
+def data_stream_simulation(num_points=1000, noise_level=0.35, anomaly_frequency=0.05, seed=None):
+    """Generates a data stream with random walk patterns, random noise, and occasional anomalies."""
     if not isinstance(num_points, int) or num_points <= 0:
         raise ValueError("num_points should be a positive integer.")
     if not (0 <= noise_level < 1):
         raise ValueError("noise_level should be between 0 and 1.")
     if not (0 <= anomaly_frequency <= 1):
         raise ValueError("anomaly_frequency should be between 0 and 1.")
-    if not (seasonality_period > 0):
-        raise ValueError("seasonality_period should be a positive integer.")
 
     # Set the seed for reproducibility
     if seed is not None:
         random.seed(seed)
         np.random.seed(seed)
-    else:
-        seed = random.randint(1, 10000)  # Generate a random seed
-        random.seed(seed)
-        np.random.seed(seed)
-
-    logging.info(f"Using seed: {seed}")
 
     data = []
     current_value = random.uniform(0, 10)  # Start with a random initial value
 
-    for i in range(num_points):
+    for _ in range(num_points):
         # Random walk step
         step = np.random.normal(0, noise_level)  # Add noise to the step
         current_value += step
-
-        # Introduce seasonality
-        seasonality = 5 * np.sin(2 * np.pi * i / seasonality_period)  # Sine wave for seasonality
-
         # Introduce anomalies randomly
-        anomaly = random.choice([7, -7]) if random.random() < anomaly_frequency else 0
-
-        # Create the data point with seasonality
-        data_point = current_value + seasonality + anomaly
+        anomaly = random.choice([4, -4]) if random.random() < anomaly_frequency else 0
+        data_point = current_value + anomaly
         data.append(data_point)
 
     return data
-
 
 def detect_cycles(data, dynamic_min_frequency=0.1):
     """Detects cycles in the data using Fast Fourier Transform (FFT) with dynamic threshold and min frequency."""
@@ -242,7 +227,7 @@ if __name__ == "__main__":
         seed = int(seed_input) if seed_input else None
 
         data_stream = data_stream_simulation(num_points=num_points, noise_level=0.35, anomaly_frequency=0.05,
-                                             seasonality_period=50, seed=seed)
+                                             seed=seed)
         visualize_data_stream(data_stream, window_size=50, z_primary=1.5, z_secondary=2.5,
                               ewma_alpha=0.3, ewma_base=1.5, ewma_scale=2.0, update_interval=5)
     except ValueError as e:
