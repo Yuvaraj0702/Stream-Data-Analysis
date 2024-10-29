@@ -126,6 +126,7 @@ visualize_data_stream(data_stream)
 ```
 
 ## Notes
+Multithreading could have sped up the processing (thread for console logging anomalies and another one for the visualization) but was not used due the requirement of limitted external libraries.
 Ensure Tkinter or an equivalent GUI backend is installed to support Matplotlib’s GUI rendering.
 The script logs anomalies and cycles to the console and in the Matplotlib window for easy monitoring.
 This project is structured to accommodate further improvements, such as integrating with a live data feed or customizing anomaly thresholds dynamically.
