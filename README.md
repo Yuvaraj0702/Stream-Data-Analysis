@@ -39,6 +39,11 @@ Clone the repository:
 ```bash
 git clone https://github.com/Yuvaraj0702/cobblestone_assessment.git
 ```
+Navigate to working directory:
+
+```bash
+cd cobblestone_assessment
+```
 
 Install dependencies:
 
