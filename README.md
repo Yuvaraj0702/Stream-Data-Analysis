@@ -1,5 +1,5 @@
 
-# Efficient Data Stream Anomaly Detection
+# Efficient Data Stream Anomaly Detection for random data
 
 This project is a Python-based tool for detecting anomalies in a data stream using Z-score and Exponentially Weighted Moving Average (EWMA) techniques. It simulates a dynamic data stream, detects anomalies, and visualizes cycles and anomaly points in real-time.
 
@@ -15,7 +15,7 @@ This project is a Python-based tool for detecting anomalies in a data stream usi
 - [Notes](#notes)
 
 ## Project Overview
-This project is designed for real-time anomaly detection in data streams, such as IoT sensor data, financial time series, or network traffic. It generates a simulated data stream with patterns, noise, seasonality, and anomalies, which is then analyzed using Z-score and EWMA methods. The visualization is displayed using Matplotlib, allowing users to monitor the data stream and view detected anomalies in a GUI.
+This project is designed for real-time anomaly detection in data streams, such as IoT sensor data, financial time series, or network traffic. It generates a simulated data stream with patterns, noise, seasonality, and anomalies, which is then analyzed using Z-score and EWMA methods. The visualization is displayed using Matplotlib, allowing users to monitor the data stream and view detected anomalies in a GUI. The algorithm is also able to detect seasonalities and patterns in the random data if they appear.
 
 ### Features
 - **Data Stream Simulation**: Generates a random walk data stream with noise, anomalies, and seasonality.

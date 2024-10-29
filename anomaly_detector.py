@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 logging.basicConfig(level=logging.INFO)
 
 
-# Data stream generator with random walk, noise, and anomalies
 def data_stream_simulation(num_points=1000, noise_level=0.35, anomaly_frequency=0.05, seed=None):
     """Generates a data stream with random walk patterns, random noise, and occasional anomalies."""
     if not isinstance(num_points, int) or num_points <= 0:
@@ -66,7 +65,6 @@ def detect_cycles(data, dynamic_min_frequency=0.1):
     return significant_frequencies
 
 
-# Z-score anomaly detector with error handling
 def adaptive_z_score_anomaly_detector(window, primary_threshold=1.5, secondary_threshold=2.5):
     """Detects anomalies using adaptive Z-score thresholds with error handling."""
     if not window:
@@ -84,7 +82,6 @@ def adaptive_z_score_anomaly_detector(window, primary_threshold=1.5, secondary_t
     return (abs(z_score) > primary_threshold or abs(z_score) > secondary_threshold), z_score
 
 
-# EWMA anomaly detector with dynamic threshold scaling and error handling
 def adaptive_ewma_anomaly_detector(data_point, alpha=0.3, base_threshold=2.0, scale_factor=1.5):
     """Detects anomalies using adaptive EWMA with dynamic threshold scaling."""
     if not (0 < alpha < 1):
@@ -219,7 +216,7 @@ def visualize_data_stream(data_stream, window_size=50, z_primary=1.5, z_secondar
     plt.show()
     plt.savefig('output_plot.png')
 
-# Example usage with user input
+# Main driver code
 if __name__ == "__main__":
     try:
         num_points = int(input("Enter the number of points (default 1000): ") or 1000)
