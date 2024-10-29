@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 logging.basicConfig(level=logging.INFO)
 
 
-# Data stream generator with random walk, noise, anomalies, and seasonality
 def data_stream_simulation(num_points=1000, noise_level=0.35, anomaly_frequency=0.05, seasonality_period=50, seed=None):
     """Generates a data stream with random walk patterns, random noise, occasional anomalies, and seasonality."""
     if not isinstance(num_points, int) or num_points <= 0:
@@ -81,7 +80,6 @@ def detect_cycles(data, dynamic_min_frequency=0.1):
     return significant_frequencies
 
 
-# Z-score anomaly detector with error handling
 def adaptive_z_score_anomaly_detector(window, primary_threshold=1.5, secondary_threshold=2.5):
     """Detects anomalies using adaptive Z-score thresholds with error handling."""
     if not window:
@@ -99,7 +97,6 @@ def adaptive_z_score_anomaly_detector(window, primary_threshold=1.5, secondary_t
     return (abs(z_score) > primary_threshold or abs(z_score) > secondary_threshold), z_score
 
 
-# EWMA anomaly detector with dynamic threshold scaling and error handling
 def adaptive_ewma_anomaly_detector(data_point, alpha=0.3, base_threshold=2.0, scale_factor=1.5):
     """Detects anomalies using adaptive EWMA with dynamic threshold scaling."""
     if not (0 < alpha < 1):
