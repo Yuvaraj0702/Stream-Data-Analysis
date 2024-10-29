@@ -70,6 +70,12 @@ Run the Main Script:
 ```bash
 python anomaly_detector.py
 ```
+Or
+
+```bash
+python3 anomaly_detector.py
+```
+Depending on your system.
 
 The command line will ask for the number of data points you want to simulate first. You may enter any positive integer
 

@@ -213,6 +213,7 @@ def visualize_data_stream(data_stream, window_size=50, z_primary=1.5, z_secondar
                      ha='center', va='center', transform=plt.gca().transAxes, fontsize=12)
 
             plt.pause(0.1)  # Allow time for the plot to update
+    logging.info("The data processing and image generation is complete. You can choose to close the chart when you please and the program will terminate")
     plt.show()
     plt.savefig('output_plot.png')
 
@@ -229,3 +230,5 @@ if __name__ == "__main__":
                               ewma_alpha=0.3, ewma_base=1.5, ewma_scale=2.0, update_interval=5)
     except ValueError as e:
         logging.error(f"Input error: {e}")
+    finally:
+        logging.info("The program has terminated")
