@@ -21,7 +21,7 @@ This project is designed for real-time anomaly detection in data streams, such a
 - **Data Stream Simulation**: Generates a random walk data stream with noise, anomalies, and seasonality.
 - **Z-score and EWMA Anomaly Detection**: Detects anomalies in real time using Z-score and adaptive EWMA techniques.
 - **Cycle Detection**: Identifies cyclic patterns in the data using FFT.
-- **Real-Time Visualization**: Displays a real-time plot of the data stream with anomaly and cycle markings.
+- **Real-Time Visualization**: Displays a real-time plot of the data stream with dynamic graph coloring, anomaly and cycle markings.
 - **Logging**: Provides logging for tracking key events and issues.
 
 ### Motivation
