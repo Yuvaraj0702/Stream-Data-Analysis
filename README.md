@@ -117,7 +117,7 @@ This is for further testing beyond the normal use case where the tester can modi
 ## Example
 ```python
 # Generate and visualize a data stream with the following parameters:
-data_stream = data_stream_simulation(num_points=500, noise_level=0.3, anomaly_frequency=0.05, seasonality_period=50)
+data_stream = data_stream_simulation(num_points=500, noise_level=0.3, anomaly_frequency=0.05)
 visualize_data_stream(data_stream)
 ```
 
