@@ -25,13 +25,15 @@ This project is designed for real-time anomaly detection in data streams, such a
 - **Logging**: Provides logging for tracking key events and issues.
 
 ### Motivation
-This anomaly detection algorithm was chosen for its adaptability and efficiency in handling real-time data streams, especially useful for environments with unpredictable or fluctuating patterns. The combination of Z-score and Exponentially Weighted Moving Average (EWMA) techniques provides a robust approach:
+This anomaly and cycle detection algorithm was chosen for its adaptability and efficiency in handling real-time data streams, particularly beneficial in environments with fluctuating patterns. The combination of Z-score, Exponentially Weighted Moving Average (EWMA), and Fast Fourier Transform (FFT) techniques provides a robust, dual-layer approach to ensure sensitive and stable anomaly detection.
 
-Z-score Detection: Z-score is effective for identifying outliers based on standard deviations from the mean. It quickly flags sudden deviations in data, making it suitable for real-time applications that require immediate anomaly detection.
+- Z-score Detection: Z-score quickly identifies outliers by highlighting data points that deviate significantly from the mean. This makes it suitable for real-time applications requiring immediate anomaly detection.
 
-EWMA Detection: EWMA is adaptive, smoothing out noise while remaining responsive to shifts in trends. It’s particularly beneficial for non-stationary data streams where data patterns evolve over time. By weighting recent data points more heavily, EWMA allows the model to "learn" and adjust dynamically.
+- EWMA Detection: EWMA adaptively smooths out noise while remaining responsive to trends, giving priority to recent data. This is valuable in non-stationary data streams where data patterns may shift over time, enabling the model to adjust dynamically.
 
-Together, these methods deliver a dual-layer approach that balances sensitivity and stability, ensuring timely and accurate anomaly detection across various data patterns in real-time.
+- FFT-Based Cycle Detection: FFT isolates dominant frequencies within the data, dynamically filtering significant cycles. With adaptive thresholding and minimum frequency adjustments, it efficiently detects periodic patterns, reducing the influence of noise.
+
+Together, these methods provide a comprehensive framework, balancing sensitivity and stability to ensure accurate, timely anomaly detection and cycle recognition across various real-time data patterns.
 
 ## Installation
 Clone the repository:
