@@ -39,12 +39,12 @@ Together, these methods provide a comprehensive framework, balancing sensitivity
 Clone the repository:
 
 ```bash
-git clone https://github.com/Yuvaraj0702/cobblestone_assessment.git
+git clone https://github.com/Yuvaraj0702/Stream-Data-Analysis.git
 ```
 Navigate to working directory:
 
 ```bash
-cd cobblestone_assessment
+cd Stream-Data-Analysis
 ```
 
 Install dependencies:
